@@ -142,26 +142,7 @@ int get_terminalnode_count (struct node* _cur) {
     return get_terminalnode_count(_cur->left) + get_terminalnode_count(_cur->right);
 }
 
-// p.283
-// 8.7 트리의 응용: 수식 트리 처리
-// 그림 8-32
 
-// BST노드의 삭제
-
-// 1. 무자식 노드 (terminal node) 삭제는 쉽다.
-//    다만, 부모 노드만 영향을 받는다. 해당 link = null로 설정
-//    !!!! 무자식 노드 == root ==> root를 null로 변환
-
-
-// 2. 홑(1개)자식,
-//    자식에게 자기 자리를 물려주고, 나의 부모에게 '그 자식'을 연결시켜준다.
-//    ** 내가 부모의 '어떤 자식'인지 잘 기억했다가, 그렇게 '그 자식'연결해준다.
-//    !!!! 홑자식 노드 == root,
-//              root로 하여금 남은 자식을 가리키게 한다.
-
-// 3. 쌍(2개)자식,
-//    왼쪽집안에서 가장 큰 노드가 올라오거나, 오른쪽 집안에서 가장 작은 노드가 올라와서 대체
-//    !!!! 쌍자식 노드 == root
 
 int main() {
     
