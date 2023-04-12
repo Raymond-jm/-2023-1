@@ -219,6 +219,14 @@ void delFromBST(int _v) {
 
 
 }
+void inorder_traversal(struct node* _cur) {
+    if(_cur == 0){
+        return;
+    }
+    inorder_traversal(_cur->left);
+    printf("%d\n", _cur->data);
+    inorder_traversal(_cur->right);
+}
 
 int main() {
     
@@ -230,9 +238,17 @@ int main() {
 
     struct combo res = findNodeCombo(100);
     printf("%d    %d\n", res.me == 0, res.parent == 0);
-
-    delFromBST(5);
+    // 무자식 지우기
+    // delFromBST(5);
     // delFromBST(40);
 
+    // 홑자식 지우기
+    //delFromBST(30);
+    
+    // 쌍자식 지우기
+    //delFromBST(20);
 
+    // 없는 자식 지우기
+    delFromBST(100);
+    inorder_traversal(root); // 5, 10, 20, 40
 }
